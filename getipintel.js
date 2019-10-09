@@ -134,7 +134,7 @@ module.exports = GetIPIntel;
 * @classdesc Class representing a session with a the getipintel API.
 * @param {sessionOptions} [options] - configurable session options
 * @example // create a session, do a quick test an IP address
-	const GetIPIntel = require('getipintel.js');
+	const GetIPIntel = require('getipintel');
 
 	const intel = new GetIPIntel({ contact: 'youremail@real.address' });
 

@@ -24,7 +24,7 @@ a valid contact email address must be provided
 
 ```
 // create a session, do a quick test on an IP address
-const GetIPIntel = require('getipintel.js');
+const GetIPIntel = require('getipintel');
 
 const intel = new GetIPIntel({ contact: 'youremail@real.address' });
 

@@ -1,0 +1,27 @@
+{
+  "name": "getipintel",
+  "version": "1.0.0",
+  "description": "Node wrapper for the getipintel API",
+  "main": "getipintel.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "generate-docs": "jsdoc --configure .jsdoc.json --verbose"
+  },
+  "keywords": [
+    "getipintel.net"
+  ],
+  "author": "Robin de Gruijter <gruijter@hotmail.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/gruijter/getipintel.js/issues"
+  },
+  "homepage": "https://github.com/gruijter/getipintel.js#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0"
+  }
+}

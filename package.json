@@ -1,10 +1,11 @@
 {
   "name": "getipintel",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Node wrapper for the getipintel API",
   "main": "getipintel.js",
   "scripts": {
     "test": "node test/test.js",
+    "test2": "node test/test2.js",
     "generate-docs": "jsdoc --configure .jsdoc.json --verbose"
   },
   "keywords": [

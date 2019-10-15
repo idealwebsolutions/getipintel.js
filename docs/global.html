@@ -177,6 +177,246 @@
         <th>Type</th>
 
         
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>e.g. 'success'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>result</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>e.g. '0.99992799758911'. see https://getipintel.net/free-proxy-vpn-tor-detection-api/#expected_output</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>queryIP</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>e.g. '185.94.111.1'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>BadIP</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>e.g. 1 for bad</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Country</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>geolocation of the IP address in ISO-3166 format e.g. 'RU'</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>timestamp of the query result e.g. 1570792169764</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description">
+    <p>IPintel is an object with properties similar to this.</p>
+</div>
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// IPintel
+{	status: 'success',
+	result: '0.99992799758911',
+	queryIP: '185.94.111.1',
+	queryFlags: 'f',
+	queryOFlags: 'coflags=b',
+	queryFormat: 'json',
+	contact: 'test@anonymous.com',
+	BadIP: 1,
+	Country: 'RU'
+	ts: 1570792169764},</code></pre>
+
+
+
+            
+                
+<h4 class="name" id="sessionOptions">sessionOptions</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
         <th>Attributes</th>
         
 
@@ -300,106 +540,7 @@
 
         <tr>
             
-                <td class="name"><code>status</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>e.g. 'success'</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>result</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>e.g. '0.99992799758911'</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>queryIP</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>e.g. '185.94.111.1'</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>BadIP</code></td>
+                <td class="name"><code>cacheTime</code></td>
             
 
             <td class="type">
@@ -414,6 +555,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
@@ -422,23 +565,25 @@
             
                 <td class="default">
                 
+                    <code>3600</code>
+                
                 </td>
             
 
-            <td class="description last"><p>e.g. 1 for bad</p></td>
+            <td class="description last"><p>the maximum time for intel results to be cached locally, in seconds.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>Country</code></td>
+                <td class="name"><code>rateLimit</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
             
@@ -447,6 +592,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
 
                 
                 </td>
@@ -455,10 +602,12 @@
             
                 <td class="default">
                 
+                    <code>true</code>
+                
                 </td>
             
 
-            <td class="description last"><p>geolocation of the IP address e.g. 'RU'</p></td>
+            <td class="description last"><p>when set to FALSE no rate limiting will be applied</p></td>
         </tr>
 
     
@@ -471,7 +620,7 @@
 
 
 <div class="description">
-    <p>IPintel is an object with properties similar to this.</p>
+    <p>sessionOptions is an object used to setup a new session</p>
 </div>
 
 
@@ -480,25 +629,13 @@
 
 
 
-    <h5>Examples</h5>
+    <h5>Example</h5>
     
     <pre class="prettyprint"><code>// sessionOptions
 {
 	contact: 'youremail@real.address',
-}
-
-/**</code></pre>
-
-    <pre class="prettyprint"><code>// IPintel
-{	status: 'success',
-	result: '0.99992799758911',
-	queryIP: '185.94.111.1',
-	queryFlags: 'f',
-	queryOFlags: 'coflags=b',
-	queryFormat: 'json',
-	contact: 'test@anonymous.com',
-	BadIP: 1,
-	Country: 'RU'},</code></pre>
+	cacheTime: 0,
+}</code></pre>
 
 
 
@@ -520,7 +657,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Wed Oct 09 2019 17:38:25 GMT+0200 (GMT+02:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Fri Oct 11 2019 20:16:46 GMT+0200 (GMT+02:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

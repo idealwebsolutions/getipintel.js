@@ -10,10 +10,9 @@
 const http = require('http');
 const https = require('https');
 const util = require('util');
+const ipRegex = require('ip-regex');
 
 const setTimeoutPromise = util.promisify(setTimeout);
-const regexIP = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
-// const regexIP = /\b(?:\d{1,3}\.){3}\d{1,3}\b/;
 const regexPrivateIP = /(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)/;
 
 class GetIPIntel {
@@ -44,12 +43,11 @@ class GetIPIntel {
 	* @param {flags} [oflags = 'bc'] - Output Flags, see https://getipintel.net/free-proxy-vpn-tor-detection-api/#oflagsb
 	* @returns {Promise.<IPintel>} Intel on the IP address.
 	*/
-	async getIntel(IP, flgs, oflgs) {
+	async getIntel(ip, flgs, oflgs) {
 		try {
 			this.queue += 1;
-			const ip = IP.replace(/[:-]/g, '.').replace(/\b0+\B/, '');	// remove leading 0's and replace seperators with .
-			if (!regexIP.test(ip)) throw Error('No or incorrect IP address provided');
-			if (regexPrivateIP.test(ip)) throw Error('Private IP addresses cannot be tested');
+			if (!ipRegex({ exact: true }).test(ip)) throw Error('No or incorrect IP address provided');
+			if (ipRegex.v4(ip) && regexPrivateIP.test(ip)) throw Error('Private IP addresses cannot be tested');
 			const flags = flgs || '';
 			const oflags = oflgs || 'bc';
 
